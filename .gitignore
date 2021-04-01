@@ -1,1 +1,4 @@
+images/*
 myenv/
+
+!images/.gitkeep
