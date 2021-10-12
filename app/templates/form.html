@@ -1,12 +1,33 @@
-{% extends base.html %}
+{% extends "base.html" %}
 
 {% block content %}
 
 
-<h2>the form will go here</h2>
+<div>
+
+<h2>select a file to upload</h2>
+<div>
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+		<ul>
+		{% for message in messages %}
+			<li>{{ message }}</li>
+		{% endfor %}
+		</ul>
+	{% endif %}
+	{% endwith %}
+</div>
+
+<form method="post" action="/process" enctype="multipart/formdata">
+	<p>
+		<input type="file" name="file" autocomplete="off" required>
+	</p>
+	<p>
+		<input type="submit" value="Submit">
+	</p>
+</form>
 
 
-
-
+</div>
 
 {% endblock %}

@@ -1,4 +1,6 @@
 images/*
 myenv/
 
+app/__pycache__/
+
 !images/.gitkeep
